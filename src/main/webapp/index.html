@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello World Application</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <p>Current message: <span id="hello-world-message"></span></p>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'hello-world', true);
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                document.getElementById('hello-world-message').innerHTML = xhr.responseText;
+            }
+        };
+        xhr.send();
+    </script>
+</body>
+</html>
